@@ -101,12 +101,15 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget> extends State
                 },
               ),
             if (betterPlayerControlsConfiguration.overflowMenuCustomItems.isNotEmpty)
-              ...betterPlayerControlsConfiguration.overflowMenuCustomItems.map(
-                (customItem) => _buildMoreOptionsListRow(customItem.icon, customItem.title, () {
+              ...betterPlayerControlsConfiguration.overflowMenuCustomItems.map((customItem) {
+                if (customItem.customWidget != null) {
+                  return customItem.customWidget!;
+                }
+                return _buildMoreOptionsListRow(customItem.icon, customItem.title, () {
                   Navigator.of(context).pop();
                   customItem.onClicked.call();
-                }),
-              ),
+                });
+              }),
           ],
         ),
       ),
