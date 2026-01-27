@@ -5,7 +5,7 @@ documentation: https://github.com/Niralempiric/better_player_plus.git
 description: "Advanced video player based on video_player and Chewie. It's solves many typical use cases and it's easy to run."
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.0.0 <3.9.0"
   flutter: ">=3.32.0"
 
 dependencies:
